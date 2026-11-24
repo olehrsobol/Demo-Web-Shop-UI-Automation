@@ -34,7 +34,6 @@ class ProductPage(BasePage):
 
     @step("Add the product to the cart")
     def add_to_cart(self) -> None:
-        """Click 'Add to cart' and wait for the confirmation notification."""
         self.add_to_cart_button.click()
 
         expect(self.added_to_cart_notification).to_be_visible(
@@ -43,7 +42,6 @@ class ProductPage(BasePage):
 
     @step("Add the product to the wishlist")
     def add_to_wishlist(self) -> None:
-        """Click 'Add to wishlist' and wait for the confirmation notification."""
         self.add_to_wishlist_button.click()
 
         expect(self.added_to_wishlist_notification).to_be_visible(
