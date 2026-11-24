@@ -41,7 +41,6 @@ class RegistrationPage(BasePage):
 
     @step("Register user {user.email}")
     def register(self, user: UserData, gender: str = "male") -> None:
-        """Fill in and submit the form. Pass ``gender=None`` to skip the radio."""
         if gender == "male":
             self.male_gender_radio.check()
         elif gender == "female":
