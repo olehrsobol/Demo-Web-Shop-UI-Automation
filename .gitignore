@@ -3,6 +3,3 @@ venv/
 .pytest_cache/
 __pycache__/
 .env
-allure-results/
-allure-report/
-test-results/
