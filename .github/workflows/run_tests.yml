@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run API tests
+      - name: Run UI tests
         id: all
         run: |
           pytest -m all --alluredir=allure-results --numprocesses 2
