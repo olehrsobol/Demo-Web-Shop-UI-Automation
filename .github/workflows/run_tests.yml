@@ -49,11 +49,12 @@ jobs:
       - name: Create config from the example
         run: |
           if [ ! -f config/settings.py ]; then
-            cp config/settings.example.py config/settings.py
+            cp config/settings.py config/settings.py
           fi
       - name: Run UI tests
         id: all
-        run: pytest --browser ${{ inputs.browser }}
+        run: pytest -m all --alluredir=allure-results --numprocesses 2
+        # run: pytest --browser ${{ inputs.browser }}
         continue-on-error: true
       - name: Upload Allure results
         if: always()
@@ -79,7 +80,7 @@ jobs:
     if: always()
     needs: run-tests
     runs-on: ubuntu-latest
-    name: Publish Allure Dashboard
+    name: Publish Allure Report
     permissions:
       contents: write
 
