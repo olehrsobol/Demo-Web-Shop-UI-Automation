@@ -53,8 +53,8 @@ jobs:
           fi
       - name: Run UI tests
         id: all
-        run: pytest -m all --alluredir=allure-results --numprocesses 2
-        # run: pytest --browser ${{ inputs.browser }}
+        # run: pytest -m all --alluredir=allure-results --numprocesses 2
+        run: pytest --browser ${{ inputs.browser }}
         continue-on-error: true
       - name: Upload Allure results
         if: always()
